@@ -9,8 +9,8 @@ apply plugin: 'es.hadoop.build.integration'
 apply plugin: 'scala.variants'
 
 variants {
-    defaultVersion '2.11.12'
-    targetVersions '2.10.7', '2.11.12'
+    defaultVersion '2.12.10'
+    targetVersions '2.10.7', '2.11.12', '2.12.10'
 }
 
 configurations {
@@ -24,7 +24,7 @@ configurations {
     scalaCompilerPlugin {
         defaultDependencies { dependencies ->
             if (project.ext.scalaMajorVersion != '2.10') {
-                dependencies.add(project.dependencies.create("com.typesafe.genjavadoc:genjavadoc-plugin_${scalaVersion}:0.13"))
+                dependencies.add(project.dependencies.create("com.typesafe.genjavadoc:genjavadoc-plugin_${scalaVersion}:0.16"))
             }
         }
     }

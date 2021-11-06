@@ -70,8 +70,8 @@ dependencies {
     implementation("org.apache.spark:spark-streaming_${project.ext.scala211MajorVersion}:$spark20Version") {
         exclude group: 'org.apache.hadoop'
     }
-    implementation("org.scala-lang:scala-library:$scala211Version")
-    implementation("org.scala-lang:scala-reflect:$scala211Version")
+    implementation("org.scala-lang:scala-library:$scala212Version")
+    implementation("org.scala-lang:scala-reflect:$scala212Version")
     implementation("org.apache.storm:storm-core:$stormVersion") {
         exclude module: "log4j-slf4j-impl"
     }

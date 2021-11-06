@@ -40,7 +40,7 @@ if (qualifier.isEmpty() == false) {
 }
 
 // determine if we're building a snapshot or not (by default we will be)
-boolean snapshot = "true".equals(System.getProperty("build.snapshot", "true"))
+boolean snapshot = false //"true".equals(System.getProperty("build.snapshot", "true"))
 if (snapshot) {
     // we update the version property to reflect if we are building a snapshot or a release build
     eshVersion += "-SNAPSHOT"
