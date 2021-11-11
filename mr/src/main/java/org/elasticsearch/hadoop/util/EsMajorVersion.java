@@ -30,7 +30,9 @@ public class EsMajorVersion implements Serializable {
     private static final long serialVersionUID = 1L;
 
     public static final EsMajorVersion V_0_X = new EsMajorVersion((byte) 0, "0.x");
-    public static final EsMajorVersion V_1_X = new EsMajorVersion((byte) 1, "1.x");
+    //public static final EsMajorVersion V_1_X = new EsMajorVersion((byte) 1, "1.x");
+    // detect OpenSearch v1.x as Elasticsearch v7.x compatible
+    public static final EsMajorVersion V_1_X = new EsMajorVersion((byte) 7, "7.x");
     public static final EsMajorVersion V_2_X = new EsMajorVersion((byte) 2, "2.x");
     public static final EsMajorVersion V_5_X = new EsMajorVersion((byte) 5, "5.x");
     public static final EsMajorVersion V_6_X = new EsMajorVersion((byte) 6, "6.x");
@@ -74,7 +76,9 @@ public class EsMajorVersion implements Serializable {
             return new EsMajorVersion((byte) 0, version);
         }
         if (version.startsWith("1.")) {
-            return new EsMajorVersion((byte) 1, version);
+            //return new EsMajorVersion((byte) 1, version);
+            // detect OpenSearch v1.x as Elasticsearch v7.x compatible
+            return new EsMajorVersion((byte) 7, version);
         }
         if (version.startsWith("2.")) {
             return new EsMajorVersion((byte) 2, version);
